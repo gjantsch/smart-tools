@@ -1,17 +1,16 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
+    <img alt="jantsch.dev" class="logo" src="@/assets/jdev.svg" width="125" height="125" />
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
+      <h1 class="page-title">Smart Tools</h1>
       <nav>
         <RouterLink to="/">Home</RouterLink>
+        <RouterLink to="/mysql2data">Mysql2Data</RouterLink>
+        <RouterLink to="/uuencode">UUEncode</RouterLink>
         <RouterLink to="/about">About</RouterLink>
       </nav>
     </div>
@@ -22,20 +21,23 @@ import HelloWorld from './components/HelloWorld.vue'
 
 <style scoped>
 header {
-  line-height: 1.5;
-  max-height: 100vh;
+  width: 100%;
+  padding-bottom: 10px;
+  border-bottom: solid 1px black;
 }
 
 .logo {
   display: block;
-  margin: 0 auto 2rem;
+  margin: 0 auto;
+  background-color: var(--brand-black-80);
+  border-radius: 5px 10px;
+  padding: 10px;
 }
 
 nav {
   width: 100%;
   font-size: 12px;
   text-align: center;
-  margin-top: 2rem;
 }
 
 nav a.router-link-exact-active {
@@ -56,11 +58,17 @@ nav a:first-of-type {
   border: 0;
 }
 
-@media (min-width: 1024px) {
+.page-title {
+  text-align: center;
+}
+
+@media (min-width: 768px) {
   header {
     display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
+  }
+
+  .page-title {
+    text-align: left;
   }
 
   .logo {
@@ -77,9 +85,6 @@ nav a:first-of-type {
     text-align: left;
     margin-left: -1rem;
     font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
   }
 }
 </style>

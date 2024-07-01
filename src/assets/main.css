@@ -1,5 +1,137 @@
 @import './base.css';
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* COLOR PALETE */
+:root {
+  --brand-color-primary: #f1580c;
+  --brand-color-secondary: #f5793b;
+  --brand-color-terciary: #f79a6b;
+  --brand-black-100: #000;
+  --brand-black-90: #0c0c0c;
+  --brand-black-80: #252525;
+  --orange-light-1: rgb(251, 176, 64, 0.2);
+}
+
+.color-primary {
+  color: var(--brand-color-primary);
+}
+.color-secondary {
+  color: var(--brand-color-secondary);
+}
+.color-terciary {
+  color: var(--brand-color-terciary);
+}
+.color-black-100 {
+  color: var(--brand-black-100);
+}
+.color-black-90 {
+  color: var(--brand-black-90);
+}
+.color-black-80 {
+  color: var(--brand-black-80);
+}
+
+.bg-primary {
+  color: var(--brand-color-primary);
+}
+.bg-secondary {
+  background-color: var(--brand-color-secondary);
+}
+.bg-terciary {
+  background-color: var(--brand-color-terciary);
+}
+.bg-black-100 {
+  background-color: var(--brand-black-100);
+}
+.bg-black-90 {
+  background-color: var(--brand-black-90);
+}
+.bg-black-80 {
+  background-color: var(--brand-black-80);
+}
+.bg-black-50 {
+  background-color: hsl(0, 0%, 0%, 0.5);
+}
+.bg-black-20 {
+  background-color: hsl(0, 0%, 0%, 0.2);
+}
+
+.bg-gradient {
+  background: linear-gradient(to right, rgb(239, 65, 54) 0%, rgb(251, 176, 64) 100%);
+}
+.color-gradient {
+  color: linear-gradient(to right, rgb(239, 65, 54) 0%, rgb(251, 176, 64) 100%);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--brand-color-primary);
+}
+
+h1 {
+  font-weight: 500;
+  font-size: 2.6rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
+a {
+  text-decoration: none;
+  color: var(--brand-color-primary);
+  transition: 0.4s;
+  padding: 3px;
+}
+
+label {
+  display: block;
+  font-weight: bolder;
+  color: var(--brand-color-primary);
+}
+
+.btn {
+  @apply font-bold py-2 px-4 rounded m-2;
+  background-color: #f1580c;
+  border: solid 1px var(--brand-color-secondary);
+  color: white;
+}
+
+.btn-primary {
+  background-color: var(--brand-color-primary);
+  border-color: var(--brand-color-primary);
+}
+
+.btn-primary:hover {
+  background-color: var(--brand-color-terciary);
+}
+
+input,
+textarea {
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--brand-color-secondary);
+  border-radius: 5px;
+  width: 100%;
+  padding: 10px 5px;
+}
+
+textarea {
+  min-height: 9rem;
+}
+
+.code {
+  font-family: monospace;
+  font-weight: 900;
+}
+
 #app {
   max-width: 1280px;
   margin: 0 auto;
@@ -7,7 +139,14 @@
   font-weight: normal;
 }
 
-a,
+.font-monospaced {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.container {
+  margin: 0.8rem 0px;
+}
+
 .green {
   text-decoration: none;
   color: hsla(160, 100%, 37%, 1);
@@ -15,21 +154,12 @@ a,
   padding: 3px;
 }
 
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
+main {
+  margin: 1rem 0;
 }
 
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
-
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
+@media (hover: hover) {
+  a:hover {
+    background-color: var(--orange-light-1);
   }
 }
